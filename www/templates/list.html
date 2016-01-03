@@ -1,0 +1,23 @@
+<ion-view view-title="{{title}}" ng-controller="listController">
+	<ion-content>
+		<ion-list>
+			<ion-item ng-repeat="item in list" class="item-icon-left" ng-click="toggleItem($index)">
+				<i class="{{item.icon}}"></i>
+				<ion-option-button class="button-assertive" ng-click="removeItem($index)">Delete</ion-option-button>
+				{{item.title}}
+			</ion-item>
+		</ion-list>
+	</ion-content>
+
+<form name="itemInput">
+        <ion-footer-bar class="bar bar-footer item-input-inset">
+          <label class="item-input-wrapper">
+            <input name="text" class="itemAdd" type="text" placeholder="Enter a list item here!" ng-model="input">
+          </label>
+          <button class="button button-clear button-positive" ng-click="addItem()">
+              Add Item
+            </button>
+
+        </ion-footer-bar>
+</form>
+</ion-view>
